@@ -66,8 +66,8 @@ header {
 .cart-items-container{
     margin:0px 10px;
     border-bottom: 2px solid rgb(172, 164, 164);
-    display : flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: auto auto auto auto auto;
 }
 
 .items-info .products-img img{
@@ -79,6 +79,16 @@ header {
 .title{
     display: flex;
     align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.title p{
+    margin-bottom: 0px;
+}
+
+.title h2{
+    margin-bottom: 0;
 }
 
 .add-minus-quantity{
@@ -101,4 +111,9 @@ header {
 .remove-item{
     display: flex;
     align-items: center;
+}
+
+.cart-total{
+    display: flex;
+    flex-direction: row-reverse;
 }
