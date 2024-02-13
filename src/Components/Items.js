@@ -3,8 +3,8 @@ import { Products } from "./Products";
 import { cartContext } from "./Cart";
 
 
-const Items = ({title,description,price,img,id}) => {
-    const {removeItem} = useContext(cartContext)
+const Items = ({title,description,price,img,id,quantity}) => {
+    const {removeItem,incrementItem,decrementItem} = useContext(cartContext)
     return (
         <>
             <div className="cart-items-container">
@@ -20,9 +20,9 @@ const Items = ({title,description,price,img,id}) => {
                 </div>
 
                 <div className="add-minus-quantity">
-                    <i className="fa-solid fa-minus"></i>
-                    <input type="text" placeholder="2"></input>
-                    <i className="fa-solid fa-plus"></i>
+                    <i className="fa-solid fa-minus" onClick={()=>{decrementItem(id)}}></i>
+                    <input type="text" placeholder={quantity}></input>
+                    <i className="fa-solid fa-plus" onClick={()=>{incrementItem(id)}}></i>
                 </div>
 
                 <div className="price">

@@ -22,9 +22,16 @@ const Cart = () => {
         return dispatch({type:"REMOVE_ITEM",payload:id})
     }
 
+    const incrementItem = (id) => {
+        return dispatch({type:"INCREMENT_ITEM",payload:id})
+    }
+
+    const decrementItem = (id) => {
+        return dispatch({type:"DECREMENT_ITEM",payload:id});
+    }
     return (
         <>
-            <cartContext.Provider value={ {...state,removeItem}}>
+            <cartContext.Provider value={ {...state,removeItem,incrementItem,decrementItem}}>
                 <ContextCart></ContextCart>
             </cartContext.Provider>
         </>
