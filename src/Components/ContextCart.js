@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useContext } from "react";
 import Items from "./Items"
 import { useState } from "react";
 import { Products } from "./Products";
+import { cartContext } from "./Cart";
 
 const ContextCart = () => {
-    const [item,setItem] = useState(Products)
+    // const [item,setItem] = useState(Products)
+
+    const item = useContext(cartContext);
     return(
         <>
         <header>

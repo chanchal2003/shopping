@@ -10,12 +10,12 @@ import ContextCart from "./ContextCart";
 export const cartContext = createContext();
 
 const Cart = () => {
-    const [item, setItem] = useState(Products)
+
     return (
         <>
-            <cartContext>
+            <cartContext.Provider value={Products}>
                 <ContextCart></ContextCart>
-            </cartContext>
+            </cartContext.Provider>
         </>
     )
 }
