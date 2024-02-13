@@ -7,10 +7,10 @@ import { cartContext } from "./Cart";
 const ContextCart = () => {
     // const [item,setItem] = useState(Products)
 
-    const item = useContext(cartContext);
-    return(
+    const { item } = useContext(cartContext);
+    return (
         <>
-        <header>
+            <header>
                 <div className="continue-shopping">
                     <img src="./images/arrow.png" alt="arrow" className="arrow-icon" />
                     <h3>Continue Shopping</h3>
@@ -28,24 +28,29 @@ const ContextCart = () => {
                     you have<span className="total-items-count">4</span>items
                     in shopping cart
                 </p>
-            {/* <Scrollbars></Scrollbars> */}
+                {/* <Scrollbars></Scrollbars> */}
 
                 <div className="cart-items">
                     {/* <Scrollbars className={'custom-scrollbar'}> */}
                     {
-                        item.map((curItem)=>{
+                        item.map((curItem) => {
                             return <Items
-                            key={curItem.id} {...curItem}
+                                key={curItem.id} {...curItem}
                             ></Items>
                         })
                     }
                     {/* </Scrollbars> */}
-                    
+
                 </div>
 
                 <div className="cart-total">
                     <h3>Cart Total : <span>220rs</span></h3>
+                    {/* <button className="clear-cart">
+                    Clear Cart
+                </button> */}
                 </div>
+
+                
             </section>
         </>
     )

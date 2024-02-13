@@ -1,9 +1,10 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { Products } from "./Products";
+import { cartContext } from "./Cart";
 
 
-const Items = ({title,description,price,img,quantity}) => {
-    
+const Items = ({title,description,price,img,id}) => {
+    const {removeItem} = useContext(cartContext)
     return (
         <>
             <div className="cart-items-container">
@@ -29,9 +30,10 @@ const Items = ({title,description,price,img,quantity}) => {
                 </div>
 
                 <div className="remove-item">
-                    <i className="fa-solid fa-trash-alt"></i>
+                    <i className="fa-solid fa-trash-alt" onClick={()=>removeItem(id)}></i>
 
                 </div>
+
             </div>
         </>
     )
